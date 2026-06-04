@@ -36,7 +36,6 @@ jobs:
 
           # Tambahkan folder mlruns atau artifacts yang terbuat saat runtime
           git add mlruns/ || true
-          git add artifacts/ || true
 
           # Lakukan commit jika ada perubahan file baru
           git commit -m "chore: automated artifact storage from CI workflow [skip ci]" || echo "No changes to commit"
