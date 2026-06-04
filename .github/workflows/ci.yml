@@ -2,9 +2,9 @@ name: Machine Learning CI Workflow
 
 on:
   push:
-    branches: [main, master]
+    branches: ["main", "master"]
   pull_request:
-    branches: [main, master]
+    branches: ["main", "master"]
 
 jobs:
   train-and-build-docker:
@@ -29,7 +29,7 @@ jobs:
           mlflow server --backend-store-uri sqlite:///:memory: --default-artifact-root ./artifacts --host 127.0.0.1 --port 5000 &          sleep 5
           python MLProject/modelling.py
 
-      -name: Upload MLflow Artifacts to GitHub
+      - name: Upload MLflow Artifacts to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: mlflow-model-artifacts
