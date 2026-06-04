@@ -52,7 +52,7 @@ jobs:
 
       - name: Build Docker Image using MLflow
         run: |
-          LATEST_RUN=$(ls -td mlruns/*/* | head -1 | awk '{print $1}')
+          LATEST_RUN=$(find mlruns/ -type d -name "model_manual_copy" | head -1)
           echo "Membangun docker dari path lokal: $LATEST_RUN"
           mlflow models build-docker -m "$LATEST_RUN" -n "${{ secrets.DOCKERHUB_USERNAME }}/heart-disease:latest"
 
