@@ -26,8 +26,7 @@ jobs:
 
       - name: Run Model Training
         run: |
-          mlflow ui --host 127.0.0.1 --port 5000
-          sleep 5
+          mlflow server --backend-store-uri sqlite:///:memory: --default-artifact-root ./artifacts --host 127.0.0.1 --port 5000 &          sleep 5
           python MLProject/modelling.py
 
       -name: Upload MLflow Artifacts to GitHub
