@@ -25,8 +25,6 @@ jobs:
 
       - name: Run Model Training
         run: |
-          mlflow server --backend-store-uri sqlite:///:memory: --default-artifact-root ./artifacts --host 127.0.0.1 --port 5000 &
-          sleep 5
           python MLProject/modelling.py
 
       - name: Commit and Push Artifacts back to GitHub
@@ -50,7 +48,9 @@ jobs:
 
       - name: Build Docker Image using MLflow
         run: |
-          mlflow models build-docker -m "mlruns/1/" -n "${{ secrets.DOCKERHUB_USERNAME }}/heart-disease:latest"
+          LATEST_RUN=$(ls -td mlruns/*/* | head -1 | awk '{print $1}')
+          echo "Membangun docker dari path lokal: $LATEST_RUN"
+          mlflow models build-docker -m "$LATEST_RUN" -n "${{ secrets.DOCKERHUB_USERNAME }}/heart-disease:latest"
 
       - name: Push Docker Image to Docker Hub
         run: |

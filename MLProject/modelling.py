@@ -25,7 +25,10 @@ RANDOM_STATE = 42
 
 DATASET_PATH = Path(__file__).parent / "dataset_preprocessed.csv"
 
-MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
+if os.environ.get("GITHUB_ACTIONS") == "true":
+    MLFLOW_TRACKING_URI = "file://" + str(Path(__file__).parent.parent / "mlruns")
+else:
+    MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
 
 
 def load_xy(dataset_path: Path, target_col: str) -> tuple[pd.DataFrame, pd.Series]:
