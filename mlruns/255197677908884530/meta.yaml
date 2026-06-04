@@ -1,0 +1,9 @@
+artifact_location: file:///home/runner/work/workflow-ci/workflow-ci/mlruns/255197677908884530
+creation_time: 1780582996676
+effective_trace_archival_retention: null
+experiment_id: '255197677908884530'
+last_update_time: 1780582996676
+lifecycle_stage: active
+name: heartdisease-baseline-local
+trace_location: null
+workspace: default

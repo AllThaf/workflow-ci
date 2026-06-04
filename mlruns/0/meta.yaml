@@ -1,0 +1,9 @@
+artifact_location: file:///home/runner/work/workflow-ci/workflow-ci/mlruns/0
+creation_time: 1780582996669
+effective_trace_archival_retention: null
+experiment_id: '0'
+last_update_time: 1780582996669
+lifecycle_stage: active
+name: Default
+trace_location: null
+workspace: default
