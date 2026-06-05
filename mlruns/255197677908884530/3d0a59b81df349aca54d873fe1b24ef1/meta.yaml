@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/workflow-ci/workflow-ci/mlruns/255197677908884530/3d0a59b81df349aca54d873fe1b24ef1/artifacts
+end_time: 1780675208170
+entry_point_name: ''
+experiment_id: '255197677908884530'
+lifecycle_stage: active
+run_id: 3d0a59b81df349aca54d873fe1b24ef1
+run_name: logreg
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780675201360
+status: 3
+tags: []
+user_id: runner
